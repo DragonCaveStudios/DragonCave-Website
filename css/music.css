@@ -1,0 +1,57 @@
+/* Music page */
+
+.latest { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+.latest-cover { flex: 0 1 380px; width: 380px; border-radius: 6px; border: 2px solid var(--gold); }
+.latest-text { flex: 1 1 420px; min-width: 0; }
+.latest-text h2 { margin: 8px 0 16px; font-size: clamp(44px, 7vw, 64px); }
+.latest-text p.note { margin: 0 0 28px; color: var(--muted); font-size: 22px; }
+
+/* Release picker */
+.release-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+.release-card {
+  display: block; width: 100%; height: 100%; text-align: left; padding: 14px;
+  background: var(--black); border: 2px solid var(--line); border-radius: 6px;
+  color: inherit; font: inherit; text-decoration: none; cursor: pointer;
+}
+.release-card:hover { border-color: #6a6a6a; color: inherit; }
+.release-card[aria-current="true"] { border-color: var(--gold); }
+.is-out [data-soon], .not-out [data-listen] { display: none; }
+.js .release-panel[hidden] { display: none; }
+.release-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
+.release-card .title { display: block; margin-top: 14px; font-family: var(--head); font-size: 23px; line-height: 1.15; text-transform: uppercase; color: var(--white); }
+.release-card .meta { display: block; margin-top: 4px; color: #b8b8b8; font-size: 17px; }
+.tag-soon { display: inline-block; margin-top: 8px; padding: 2px 10px; border-radius: 3px; background: var(--red); color: var(--black); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.release-panel {
+  margin-top: 40px; background: var(--black); border: 1px solid var(--gold); border-radius: 6px;
+  padding: 32px; display: flex; flex-wrap: wrap; gap: 32px 40px; scroll-margin-top: 24px;
+}
+.release-panel + .release-panel { margin-top: 24px; } /* only matters if JS is off and all panels show */
+.release-panel .info { flex: 1 1 300px; min-width: 0; }
+.release-panel .info h3 { margin: 6px 0 12px; font-size: 40px; }
+.release-panel .info p { margin: 0 0 20px; color: var(--muted); }
+.release-panel .info p.eyebrow { margin: 0; color: var(--gold); }
+.release-panel .info p.eyebrow.red { color: var(--red-text); }
+.tracklist { flex: 1 1 340px; min-width: 0; margin: 0; padding-left: 30px; columns: 2 220px; column-gap: 32px; color: #e6e6e6; }
+.tracklist li { padding: 3px 0; break-inside: avoid; }
+.tracklist .len { color: var(--dim); font-variant-numeric: tabular-nums; }
+
+/* More music cards */
+.more { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.more-card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 36px; }
+.more-card.gold { border-color: var(--gold); }
+.more-card h2 { margin: 6px 0 10px; font-size: 34px; }
+.more-card p { margin: 0; color: var(--muted); }
+.more-card .go { display: inline-block; margin-top: 18px; padding: 6px 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 640px) {
+  .latest { gap: 32px; }
+  .latest-cover { width: 100%; flex-basis: 100%; }
+  .release-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .release-card { padding: 10px; }
+  .release-card .title { font-size: 19px; }
+  .release-card .meta { font-size: 15px; }
+  .release-panel { padding: 24px 20px; }
+  .release-panel .info h3 { font-size: 32px; }
+  .more-card { padding: 28px 24px; }
+}
