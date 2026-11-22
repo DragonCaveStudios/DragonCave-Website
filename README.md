@@ -25,6 +25,7 @@ Plain HTML and CSS. No build step: edit a file, commit, and GitHub Pages publish
 ## "Coming soon" items to swap in later
 Search the files for `soon` to find them all.
 - **Store pages (Steam, Epic, GOG) and Discord**: `games/index.html` and the Driftfire block on `index.html`. Replace each `<span class="btn btn-soon">…</span>` with a link, e.g. `<a class="btn btn-red" href="STEAM-LINK">Wishlist on Steam</a>`.
+- **Games YouTube channel**: the "More from the cave" block on `games/index.html`. Also add "YouTube (games)" to the footer of every page and point the Contact page at it where it fits. The music channel is `@dragoncavemusic`.
 - **Mailing list**: the "Hear it first" section on `index.html`.
 - **Contact forms**: `contact/index.html`.
 - **Work with me enquiries**: `work/index.html`.
