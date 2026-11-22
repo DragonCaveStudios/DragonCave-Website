@@ -18,7 +18,7 @@ Plain HTML and CSS. No build step: edit a file, commit, and GitHub Pages publish
 
 ## Other folders
 - `css/site.css`: shared look (header, footer, buttons, colours, fonts). `css/music.css` and `js/music.js` are for the Music page only.
-- `img/`: logo, covers (`img/covers/<id>.png`), game screenshots (`img/games/`).
+- `img/`: logo, covers (`img/covers/<id>.jpg`), game screenshots (`img/games/`).
 - `fonts/`: Anton and Barlow Condensed, stored here so nothing loads from Google.
 - `CNAME`: the custom domain.
 
@@ -32,7 +32,7 @@ Search the files for `soon` to find them all.
 - **Deezer, Apple Music and social links**: marked with comments in `music/index.html` and the footer of every page.
 
 ## Music page: add a new release
-1. Put the square cover in `img/covers/<id>.png` (id = lower case title with dashes, e.g. `signal-flow`).
+1. Put the square cover in `img/covers/<id>.jpg` (square, 800×800 JPEG; id = lower case title with dashes, e.g. `signal-flow`).
 2. In `music/index.html`, copy one card `<li>` in the Releases grid and paste it at the top. Change the id, title, type, date and `data-out="YYYY-MM-DD"`.
 3. Copy one `<article class="release-panel">` and paste it at the top of the panels. Same id, same `data-out`, new note and tracklist.
 4. Before the release date the card shows "Out ..."; from the release day it shows "Listen on Spotify" by itself.
@@ -42,5 +42,3 @@ When a new album comes out, also replace the "Latest album" block near the top o
 ## Changing the header or footer
 It's repeated on every page, so change it in each `index.html` (and `404.html`).
 
-## Still to do
-- Full-size square covers (current ones are 200px), and a square cover for Turn The Lights Up Bright.
